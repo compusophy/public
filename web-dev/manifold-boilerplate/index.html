@@ -19,23 +19,19 @@
         <div id="wizards3"></div>
         <div id="wizards2">  
             <script>
-      window.addEventListener("m-authenticated", async (event) => {
-  
-      document.getElementById("wizards2").innerHTML = 8;
-      
-      const client = event.detail.client;
-
-  const tokens = await client.getNFTsOfOwner({
-    filters: [
-      {
-        contractAddress: "0x51d84330e9b0be75ed4fef85d61ebc51fc0aa677",
-      },
-    ],
-  });
+                window.addEventListener("m-authenticated", async (event) => {     
+                    const client = event.detail.client;
+                    const tokens = await client.getNFTsOfOwner({
+                        filters: [
+                            {
+                                contractAddress: "0x51d84330e9b0be75ed4fef85d61ebc51fc0aa677"
+                            }
+                        ]
+                    });
       
       document.getElementById("wizards2").innerHTML = tokens[0].image;
       document.getElementById("wizards3").innerHTML = tokens[0].metadata.animation_url;
-      document.getElementById("wizards4").innerHTML = tokens[0].name
+      document.getElementById("wizards4").innerHTML = tokens[0].name;
       
       for (let i = 0; i < tokens.length; i++) {
   const iframe = document.createElement("iframe");
