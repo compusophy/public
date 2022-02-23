@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html style=
+      "
+      background-color:gray
+       
+       ">
+<head>
+      <script src="https://d3lcc9o79wflkf.cloudfront.net/connect.umd.js">
+          
+          
+  </script>
+      <link rel="stylesheet" href="https://d3lcc9o79wflkf.cloudfront.net/connect.css">
+</head>
+<body style=
+      "margin: 0;
+       background-color:#000;
+       color:#fff;
+       width: 400px;
+       height: 400px;
+       
+       text-align: center;
+       
+       position: absolute;
+       
+       top: 50%;
+       left: 50%;
+       -ms-transform: translate(-50%, -50%);
+       transform: translate(-50%, -50%);
+       ">
+    <div style="padding: 0px">
+        
+        <div id="app">
+            
+                
+          <div id="coll" style="text-align: center;
+       
+       position: absolute;
+       
+       top: 50%;
+       left: 50%;
+       -ms-transform: translate(-50%, -50%);
+       transform: translate(-50%, -50%);">
+            
+                <div style="">
+                  
+                  <h3>collected compusophy</h3>
+                  
+                  <p style=
+                     "display:inline-block;
+                     margin:5px">phi:</p><p id
+                     ="phi-count" style=
+                     "display:inline-block;
+                      margin:5px"></p>   
+                </div>
+            <div style="display:inline-block">
+                  <p style=
+                     "margin:5px;
+                      display:inline-block;">collective:</p><p id
+                     ="phi-count2" style=
+                     "display:inline-block;
+                      margin:5px"></p>
+                </div>
+
+          </div>
+        
+        <div id="wizards2">
+            <script>
+                window.addEventListener("m-authenticated", async (event) => {
+                    const client = event.detail.client;
+                    const tokens = await client.getNFTsOfOwner({
+                        filters: [
+                            {
+                                contractAddress: "0x51d84330e9b0be75ed4fef85d61ebc51fc0aa677"
+                            }
+                        ]
+                    });
+                    
+                    
+                    
+                    document.getElementById("phi-count").innerHTML = tokens[0].count;
+                    document.getElementById("phi-count2").innerHTML = tokens[0].count;
+                });
+            </script>
+        </div>
+    </div>
+      
+</body>
+ 
+
+<img style="position:absolute;
+      top: 0px;
+      left: 0px;
+      padding: 10px;" id="compusophy" src="https://arweave.net/_E3QL7QarBxw5R8UIQyGjXnDktwiOeiFXrmyh_faVMQ" height="40" width="40"></img>
+
+<div style=
+      "
+      position:absolute;
+      top: 11px;
+      right: 11px;
+      padding: 10px;
+      
+       ">
+  
+  <div style=""
+            data-widget="m-oauth-connect"
+            data-client-id="abbbd39fa49115af1e0ae9de623f5b7e1a36f03796a7229969f311cbd61eace6"
+            data-app-name="phi.chat"
+            data-redirect-uri="https://phi.chat"
+     
+     >
+    
+        </div>
+  </div>
+</html>
