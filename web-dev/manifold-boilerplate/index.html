@@ -9,7 +9,8 @@
   
 <body>
     <div>
-        <div data-widget="m-oauth-connect"  
+        <div 
+            data-widget="m-oauth-connect"  
             data-client-id="abbbd39fa49115af1e0ae9de623f5b7e1a36f03796a7229969f311cbd61eace6"  
             data-app-name="phi.chat"  
             data-redirect-uri="https://phi.chat">
@@ -17,7 +18,7 @@
         <div id="wizards"><h3>NFT</h3></div>   
         <div id="wizards4"></div>
         <div id="wizards3"></div>
-        <div id="wizards2">  
+        <div id="wizards2">
             <script>
                 window.addEventListener("m-authenticated", async (event) => {     
                     const client = event.detail.client;
@@ -28,30 +29,13 @@
                             }
                         ]
                     });
-      
-      document.getElementById("wizards2").innerHTML = tokens[0].image;
-      document.getElementById("wizards3").innerHTML = tokens[0].metadata.animation_url;
-      document.getElementById("wizards4").innerHTML = tokens[0].name;
-      
-      for (let i = 0; i < tokens.length; i++) {
-  const iframe = document.createElement("iframe");
-  iframe.src = tokens[i].metadata.animation_url;
-  iframe.height = 400;
-  iframe.width = 400;
-  iframe.scrolling = "no";
-  iframe.overflow = "hidden";
-        
-  document.getElementById("wizards").appendChild(iframe);
-}
-      
-});
-                                                      
-  </script>   
-    
-    
-   
-  </div>
-  
- 
+                    document.getElementById("wizards2").innerHTML = tokens[0].image;
+                    document.getElementById("wizards3").innerHTML = tokens[0].metadata.animation_url;
+                    document.getElementById("wizards4").innerHTML = tokens[0].name;    
+                });                                                    
+            </script>   
+        </div>
+    </div>
 </body>
+  
 </html>
